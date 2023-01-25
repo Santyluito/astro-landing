@@ -1,0 +1,25 @@
+---
+import { proyects } from "../../config/project.json";
+---
+
+<section class="mb-5 py-2">
+  <h2 class="text-5xl font-bold my-10 text-center">Caracteristicas</h2>
+  <div class="grid gap-4 px-3 drop-shadow-xl md:grid-cols-3">
+    {
+      proyects.map((f) => (
+        <>
+          <div class="bg-gray-400 p-10 rounded-xl ">
+            <h2 class="text-2xl text-center text-gray-800 font-bold my-2">
+              {f.title}
+            </h2>
+            <p class="text-sm text-slate-800 mb-4">{f.description}</p>
+            <a class="mt-4 hover:border-b-2 cursor-pointer">Mas Info...</a>
+          </div>
+          <div>
+            <img src={f.image} alt={f.title} class="w-72 m-auto drop-shadow-lg " />
+          </div>
+        </>
+      ))
+    }
+  </div>
+</section>
